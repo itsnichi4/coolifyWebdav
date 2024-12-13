@@ -14,7 +14,7 @@ services:
       "
     volumes:
       - ./data:/var/dav:rw
-      - ./http.d:/etc/nginx/http.d:ro
+      - ./http.d:/etc/nginx/http.d:rw
       - ./snippets:/etc/nginx/snippets:rw
     ports:
       - 8000:80
