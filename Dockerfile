@@ -21,4 +21,4 @@ COPY adduser.sh /addusers
 
 # Add users by running the script
 RUN chmod +x /addusers/adduser.sh && \
-    dos2unix /addusers/adduser
+    dos2unix /addusers/adduser.sh
