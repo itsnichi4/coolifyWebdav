@@ -17,5 +17,5 @@ services:
       - ./http.d:/etc/nginx/http.d:ro
       - ./snippets:/etc/nginx/snippets:rw
     ports:
-      - 80:80
+      - 8000:80
       - 4022:22 
