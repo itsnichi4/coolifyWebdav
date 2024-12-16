@@ -3,19 +3,17 @@ version: '3'
 services:
   nginx:
     build: .
-    command: >
-      sh -c "
-        # Start SSH in the background
-        /usr/sbin/sshd -D &
+    command:
+      - sh
+      - -uexc
+      - |
         # chown to let nginx control entries inside
         chown -Rc nginx:nginx /var/dav
-        # Start Nginx in the foreground
         exec nginx -g 'daemon off;'
-      "
     volumes:
       - ./data:/var/dav:rw
-      - ./http.d:/etc/nginx/http.d:rw
+      - ./http.d:/etc/nginx/http.d:ro
       - ./snippets:/etc/nginx/snippets:rw
     ports:
-      - 8000:80
-      - 4022:22 
+      - 4080:80
+      - 4022:22
