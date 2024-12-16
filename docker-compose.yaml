@@ -2,7 +2,7 @@ version: '3'
 
 services:
   nginx:
-    image: itsnichi4/webdav-nginx:v1.0 
+    image: itsnichi4/webdav-nginx:latest 
     command:
       - sh
       - -uexc
