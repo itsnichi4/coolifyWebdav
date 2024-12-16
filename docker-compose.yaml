@@ -13,9 +13,9 @@ services:
       nginx -g 'daemon off;'
 
     volumes:
-      - ./data:/var/dav:rw
-      - ./http.d:/etc/nginx/http.d:ro
-      - ./snippets:/etc/nginx/snippets:rw
+      - ./data:/var/dav
+      - ./http.d:/etc/nginx/http.d
+      - ./snippets:/etc/nginx/snippets
     ports:
       - 4080:80
       - 4022:22
