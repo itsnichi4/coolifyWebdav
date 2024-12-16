@@ -19,7 +19,7 @@ services:
     ports:
       - "4080:80"  # HTTP
       - "9023:22"  # SSH
-
+      - "9443:443"
 volumes:
   var-dav:
     driver: local  # Using the default Docker volume driver
