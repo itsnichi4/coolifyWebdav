@@ -16,6 +16,8 @@ services:
       - ./data:/var/dav/data
       - ./snippets:/var/dav/snippets
       - ./http:/var/dav/http
+      - ./http.d:/var/dav/http.d
+
     ports:
       # - "4080:80"  # HTTP
       - "9023:22"  # SSH
