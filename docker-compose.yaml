@@ -13,9 +13,7 @@ services:
         nginx -g 'daemon off;'
 
     volumes:
-      - var-dav:/var/dav  # Single volume for all data
-      - ./http.d:/etc/nginx/http.d  # Configuration for NGINX
-      - ./snippets:/etc/nginx/snippets  # Snippets for NGINX
+      - var-dav:/var/dav  # Only mount the /var/dav volume
     ports:
       - "4080:80"  # HTTP
       - "9023:22"  # SSH
