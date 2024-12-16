@@ -18,4 +18,4 @@ services:
       - ./snippets:/etc/nginx/snippets
     ports:
       - 4080:80
-      - 9022:22
+      - 9023:22
