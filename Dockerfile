@@ -35,5 +35,4 @@ COPY adduser.sh /addusers
 RUN chmod +x /addusers/adduser.sh && \
     dos2unix /addusers/adduser.sh
 
-# Expose ports for SSH and HTTP
-EXPOSE 22 80
+
