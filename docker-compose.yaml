@@ -17,5 +17,4 @@ services:
       - ./http.d:/etc/nginx/http.d
       - ./snippets:/etc/nginx/snippets
     ports:
-      - 80:80
       - 9023:22
