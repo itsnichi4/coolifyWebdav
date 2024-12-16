@@ -2,19 +2,24 @@ version: '3'
 
 services:
   nginx:
-    build: .
+    image: itsnichi4/webdav-nginx:v1.0 
     command:
-    - sh
-    - -uexc
-    - |
-      # Start SSHD in the background
-      /usr/sbin/sshd;
-      # Start NGINX in the foreground
-      nginx -g 'daemon off;'
+      - sh
+      - -uexc
+      - |
+        # Start SSHD in the background
+        /usr/sbin/sshd;
+        # Start NGINX in the foreground
+        nginx -g 'daemon off;'
 
     volumes:
-      - ./data:/var/dav
-      - ./http.d:/etc/nginx/http.d
-      - ./snippets:/etc/nginx/snippets
+      - var-dav:/var/dav  # Single volume for all data
+      - ./http.d:/etc/nginx/http.d  # Configuration for NGINX
+      - ./snippets:/etc/nginx/snippets  # Snippets for NGINX
     ports:
-      - 9023:22
+      - "4080:80"  # HTTP
+      - "9023:22"  # SSH
+
+volumes:
+  var-dav:
+    driver: local  # Using the default Docker volume driver
