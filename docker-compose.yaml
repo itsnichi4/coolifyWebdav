@@ -17,7 +17,7 @@ services:
       - ./snippets:/var/dav/snippets
       - ./http:/var/dav/http
     ports:
-      - "4080:80"  # HTTP
+      # - "4080:80"  # HTTP
       - "9023:22"  # SSH
       - "4080:443"
 volumes:
